@@ -7,6 +7,7 @@ namespace RealEstate.Models.ViewModel
 {
     public class HomesViewModel
     {
+        
         public Homes Homes { get; set; }
     }
 }

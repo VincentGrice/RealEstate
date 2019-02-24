@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RealEstate.Models.Homes>
+
+@{
+    ViewData["Title"] = "ViewList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container justify-content-center">
+    <h2>ViewList</h2>
+
+    <div>
+        <h4>Homes</h4>
+        <hr />
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div style="border:1px solid black;" class="ml-md-3">
+                    <img  src="@item.HouseImageUrl" style="width:300px; height:225px;"/>
+                    <div class="text-left ml-2 mt-2" style="width:300px; height:200px;">
+                        <p>@String.Format("{0:c}", item.Price)</p>
+                        <p>@item.Bedrooms bds. / @item.Bathrooms ba.</p>
+                        <a asp-action="Details" class="btn btn-outline-dark">View</a>
+                    </div>
+                </div>
+            }
+        </div>
+        
+          
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
