@@ -56,5 +56,23 @@ namespace RealEstate.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        //GET : Details
+        public async Task<IActionResult> Details(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            HomesVM.Homes = await _db.Homes.SingleOrDefaultAsync(m => m.Id == id);
+            
+                if(HomesVM.Homes == null)
+            {
+                return NotFound();
+            }
+
+            return View(HomesVM);
+        }
     }
 }
