@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@String.Format("{0:c}", item.Price)</h5>
                     <p class="card-text">@item.Type <br />@item.Bedrooms bds. / @item.Bathrooms ba.</p>
-                    <a href="#" class="btn btn-outline-dark">View</a>
+                    <a asp-action="ViewDetails" asp-route-id="@item.Id" asp-controller="Home" class="btn btn-outline-dark">View Details</a>
                 </div>
             </div>
             }

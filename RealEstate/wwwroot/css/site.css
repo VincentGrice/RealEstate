@@ -63,6 +63,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .img-holder {
     width:220px;
     height:200px;
+    object-fit:cover;
 }
 .swiper-slide p {
     color:white;

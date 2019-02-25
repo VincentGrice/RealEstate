@@ -48,7 +48,7 @@
 
                             <p>@String.Format("{0:c}", item.Price)</p>
                             <p>@item.Bedrooms bds. / @item.Bathrooms ba.</p>
-                            <a asp-action="ViewList" asp-route-id="@item.Id" class="btn btn-outline-info">View</a>
+                            <a asp-action="ViewDetails" asp-route-id="@item.Id" class="btn btn-outline-info">View</a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
 @section scripts {
     <script>
         var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 2,
+            slidesPerView: 4,
             slidesPerGroup:1,
             spaceBetween: 30,
             loop: true,
@@ -79,13 +79,16 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            autoplay: {
+                delay: 2500,
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             breakpoints: {
                 1024: {
-                    slidesPerView: 2,
+                    slidesPerView: 4,
                     spaceBetween: 40,
                     slidesPerGroup:1,
                 },
@@ -95,7 +98,7 @@
                     slidesPerGroup: 1,
                 },
                 640: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                     slidesPerGroup: 1,
                 },

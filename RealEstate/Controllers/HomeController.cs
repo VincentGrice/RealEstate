@@ -41,6 +41,12 @@ namespace RealEstate.Controllers
             return View(await homes.ToListAsync());
         }
 
+        public async Task<IActionResult> ViewDetails(int id)
+        {
+            var home = await _db.Homes.Where(m=>m.Id == id).FirstOrDefaultAsync();
+            return View(home);
+        }
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

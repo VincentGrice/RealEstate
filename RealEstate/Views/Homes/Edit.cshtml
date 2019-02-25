@@ -1,0 +1,97 @@
+﻿@model RealEstate.Models.ViewModel.HomesViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Edit</h2>
+
+    <h4>Homes</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Homes.Id" />
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl1" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl1" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl2" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl2" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl3" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl3" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl4" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl4" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl4" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl5" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl5" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl5" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.HouseImageUrl6" class="control-label"></label>
+                    <input asp-for="Homes.HouseImageUrl6" class="form-control" />
+                    <span asp-validation-for="Homes.HouseImageUrl6" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.Price" class="control-label"></label>
+                    <input asp-for="Homes.Price" class="form-control" />
+                    <span asp-validation-for="Homes.Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.EstMortgage" class="control-label"></label>
+                    <input asp-for="Homes.EstMortgage" class="form-control" />
+                    <span asp-validation-for="Homes.EstMortgage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.Bedrooms" class="control-label"></label>
+                    <input asp-for="Homes.Bedrooms" class="form-control" />
+                    <span asp-validation-for="Homes.Bedrooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.Bathrooms" class="control-label"></label>
+                    <input asp-for="Homes.Bathrooms" class="form-control" />
+                    <span asp-validation-for="Homes.Bathrooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.Type" class="control-label"></label>
+                    <input asp-for="Homes.Type" class="form-control" />
+                    <span asp-validation-for="Homes.Type" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Homes.YearBuilt" class="control-label"></label>
+                    <input asp-for="Homes.YearBuilt" class="form-control" />
+                    <span asp-validation-for="Homes.YearBuilt" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
