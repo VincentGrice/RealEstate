@@ -16,5 +16,7 @@ namespace RealEstate.Data
         }
 
         public DbSet<Homes> Homes { get; set; }
+
+        public DbSet<Appointments> Appointments { get; set; }
     }
 }

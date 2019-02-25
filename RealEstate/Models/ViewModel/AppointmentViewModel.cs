@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Models.ViewModel
 {
-    public class HomesViewModel
+    public class AppointmentViewModel
     {
-        
-        public Homes Homes { get; set; }
-
+        public Appointments Appointments { get; set; }
     }
 }

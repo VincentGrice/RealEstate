@@ -1,8 +1,145 @@
 ﻿@model RealEstate.Models.Homes
 
+<style>
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+        .swiper-slide img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+</style>
 
 <div class="container">
-    <div>
-        <img src="@Model.HouseImageUrl" />
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl1" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl2" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl3" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl4" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl5" /></div>
+            <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl6" /></div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
+
+    <div class="row">
+        <div class="col-md-8 mt-3" style="background-color:paleturquoise; border-radius:20px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>@Model.Id</h1>
+                    <p>@Model.Bedrooms bds. / @Model.Bathrooms ba.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-6 justify-content-center">
+                    <h2 class="">@String.Format("{0:c}", Model.Price)</h2>
+                    <br />
+                    <p>
+                        <strong>Est. Mortgage</strong><br />
+                        @String.Format("{0:c}", Model.EstMortgage) / month
+                    </p>
+                    <button type="button" class="btn btn-outline-primary"><strong><i class="fas fa-search-dollar"></i>Get Pre Qualified</strong></button>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Facts and Features</h3>
+                    <p><i class="fas fa-home"></i> Type: @Model.Type</p>
+                    <hr />
+                    <p><i class="fas fa-hammer"></i> Year Built: @Model.YearBuilt</p>
+                    <hr />
+                    <p><i class="fas fa-bed"></i> Bedrooms: @Model.Bedrooms</p>
+                    <hr />
+                    <p><i class="fas fa-bath"></i> Bathrooms: @Model.Bathrooms</p>
+                    <hr />
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-4 mt-3" style="border:2px solid black;border-radius:20px;">
+            <h2>Listed By</h2><h4>Jane Doe</h4>
+            <img src="https://images.pexels.com/photos/764529/pexels-photo-764529.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100px; height:100px; object-fit:cover;border-radius:50%;" />
+            <h4>John Doe</h4>
+            <img src="https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100px; height:100px; object-fit:cover;border-radius:50%;" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <br />
+            <!-- Large modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Schedule Appointment</button>
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="col-md-12">
+                            <form>
+                                <div class="form-group">
+                                    <label class="control-label">Name</label>
+                                    <input class="form-control" name="CustomerName" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Email</label>
+                                    <input class="form-control" name="CustomerEmail" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Phone</label>
+                                    <input class="form-control" name="CustomerPhoneNumber"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-default" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
+
+
+
+@section scripts{
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+}
