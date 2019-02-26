@@ -50,7 +50,13 @@ namespace RealEstate.Controllers
             _db.Appointments.Add(AppointmentVM.Appointments);
             await _db.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ViewBooked));
+        }
+
+        public IActionResult ViewBooked()
+        {
+            
+            return View();
         }
 
     }

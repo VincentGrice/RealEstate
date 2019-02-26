@@ -42,6 +42,7 @@
             <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl4" /></div>
             <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl5" /></div>
             <div class="swiper-slide img-fluid"><img src="@Model.HouseImageUrl6" /></div>
+            
 
         </div>
         <!-- Add Pagination -->
@@ -91,34 +92,8 @@
             <img src="https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100px; height:100px; object-fit:cover;border-radius:50%;" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
             <br />
-            <!-- Large modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Schedule Appointment</button>
+            <a class="btn btn-outline-success" asp-controller="Appointments" asp-action="Create">Schedule Appointment</a>
 
-            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="col-md-12">
-                            <form>
-                                <div class="form-group">
-                                    <label class="control-label">Name</label>
-                                    <input class="form-control" name="CustomerName" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Email</label>
-                                    <input class="form-control" name="CustomerEmail" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Phone</label>
-                                    <input class="form-control" name="CustomerPhoneNumber"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-default" />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>

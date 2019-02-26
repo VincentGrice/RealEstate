@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Models.ViewModel
 {
-    public class HomesViewModel
+    public class HomesViewModel 
     {
         
         public Homes Homes { get; set; }
